@@ -12,7 +12,7 @@ Convert documents between formats (DOCX, PDF, XLSX, PPTX, etc.) in Node.js or br
 ## Installation
 
 ```bash
-npm install @matbee/libreoffice-converter
+npm install @matbee/libreoffice-document-converter
 ```
 
 ## Demo
@@ -23,7 +23,7 @@ https://convertmydocuments.com
 ### One-Shot Conversion (Simplest)
 
 ```javascript
-import { convertDocument } from '@matbee/libreoffice-converter';
+import { convertDocument } from '@matbee/libreoffice-document-converter';
 import fs from 'fs';
 
 const docx = fs.readFileSync('document.docx');
@@ -34,7 +34,7 @@ fs.writeFileSync('document.pdf', result.data);
 ### Export as Image
 
 ```javascript
-import { exportAsImage } from '@matbee/libreoffice-converter';
+import { exportAsImage } from '@matbee/libreoffice-document-converter';
 import fs from 'fs';
 
 // Export single page (0-indexed)
@@ -54,7 +54,7 @@ const highRes = await exportAsImage(pptxBuffer, [0, 1, 2], 'png', { dpi: 300, wi
 For servers, use the worker converter to avoid blocking the main thread:
 
 ```javascript
-import { createWorkerConverter } from '@matbee/libreoffice-converter';
+import { createWorkerConverter } from '@matbee/libreoffice-document-converter';
 
 const converter = await createWorkerConverter({ wasmPath: './wasm' });
 
@@ -74,7 +74,7 @@ await converter.destroy(); // Clean up when done
 ## Browser Usage
 
 ```javascript
-import { WorkerBrowserConverter, createWasmPaths } from '@matbee/libreoffice-converter/browser';
+import { WorkerBrowserConverter, createWasmPaths } from '@matbee/libreoffice-document-converter/browser';
 
 const converter = new WorkerBrowserConverter({
   ...createWasmPaths('/wasm/'),
@@ -118,12 +118,31 @@ MPL-2.0 (same as LibreOffice)
 
 ## Contributing
 
+### Prerequisites
+
+Before cloning the repository, ensure you have the following installed:
+
+- [Git LFS](https://git-lfs.github.com/) - Required for downloading WASM files tracked by Git LFS
+- [pnpm](https://pnpm.io/installation) - Package manager used for this project
+
+### Setup
+
 ```bash
+# Ensure Git LFS is initialized
+git lfs install
+
+# Clone the repository
 git clone https://github.com/matbeedotcom/libreoffice-document-converter.git
 cd libreoffice-document-converter
-npm install
-npm run build
-npm test
+
+# Install dependencies
+pnpm install
+
+# Build the project
+pnpm run build
+
+# Run tests
+pnpm test
 ```
 
 See [docs/API.md#building-from-source](docs/API.md#building-from-source) for building the WASM module.
