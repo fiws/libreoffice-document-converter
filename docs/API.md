@@ -957,7 +957,7 @@ BUILD_JOBS=32 ./build/build-wasm.sh
 | `BUILD_DIR` | `~/libreoffice-wasm-build` | Build directory |
 | `OUTPUT_DIR` | `./wasm` | Output directory for WASM files |
 | `LIBREOFFICE_VERSION` | `libreoffice-24-8` | LibreOffice Git branch |
-| `EMSDK_VERSION` | `3.1.51` | Emscripten SDK version |
+| `EMSDK_VERSION` | `4.0.6` | Emscripten SDK version |
 
 ### Build Output
 

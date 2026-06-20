@@ -71,7 +71,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /build
 
 # Install Emscripten SDK (latest stable version)
-ENV EMSDK_VERSION=3.1.51
+ENV EMSDK_VERSION=4.0.6
 ENV EMSDK=/opt/emsdk
 ENV PATH="${EMSDK}:${EMSDK}/upstream/emscripten:${PATH}"
 

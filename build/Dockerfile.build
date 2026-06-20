@@ -8,7 +8,7 @@ LABEL description="Dedicated LibreOffice WASM build environment"
 
 # Build arguments
 ARG LIBREOFFICE_VERSION=libreoffice-24-8
-ARG EMSDK_VERSION=3.1.74
+ARG EMSDK_VERSION=4.0.6
 ARG BUILD_JOBS=4
 ARG USER_ID=1000
 ARG GROUP_ID=1000
