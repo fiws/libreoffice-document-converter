@@ -17,7 +17,7 @@ set -e
 
 # Configuration
 LIBREOFFICE_VERSION="${LIBREOFFICE_VERSION:-libreoffice-24-8}"
-EMSDK_VERSION="${EMSDK_VERSION:-3.1.51}"
+EMSDK_VERSION="${EMSDK_VERSION:-4.0.6}"
 BUILD_DIR="${BUILD_DIR:-$HOME/libreoffice-wasm-build}"
 OUTPUT_DIR="${OUTPUT_DIR:-$(pwd)/wasm}"
 BUILD_JOBS="${BUILD_JOBS:-$(nproc)}"

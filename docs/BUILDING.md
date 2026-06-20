@@ -98,7 +98,7 @@ CLEAN_BUILD=1 ./build/build-wasm.sh
 | `BUILD_DIR` | `~/libreoffice-wasm-build` | Build directory |
 | `OUTPUT_DIR` | `./wasm` | Output directory |
 | `LIBREOFFICE_VERSION` | `libreoffice-24-8` | Git branch to build |
-| `EMSDK_VERSION` | `3.1.51` | Emscripten version |
+| `EMSDK_VERSION` | `4.0.6` | Emscripten version |
 | `SKIP_DEPS` | `0` | Skip apt install |
 | `CLEAN_BUILD` | `0` | Clean before building |
 
@@ -133,9 +133,9 @@ cd ~/libreoffice-wasm-build
 git clone https://github.com/emscripten-core/emsdk.git
 cd emsdk
 
-# Install and activate version 3.1.51
-./emsdk install 3.1.51
-./emsdk activate 3.1.51
+# Install and activate version 4.0.6
+./emsdk install 4.0.6
+./emsdk activate 4.0.6
 
 # Set up environment (do this in every new terminal)
 source ./emsdk_env.sh
@@ -501,8 +501,8 @@ RUN apt-get update && apt-get install -y \
 # Set up Emscripten
 RUN git clone https://github.com/emscripten-core/emsdk.git /opt/emsdk \
     && cd /opt/emsdk \
-    && ./emsdk install 3.1.51 \
-    && ./emsdk activate 3.1.51
+    && ./emsdk install 4.0.6 \
+    && ./emsdk activate 4.0.6
 
 ENV PATH="/opt/emsdk:/opt/emsdk/upstream/emscripten:${PATH}"
 
